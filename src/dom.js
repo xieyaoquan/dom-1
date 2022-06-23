@@ -1,6 +1,18 @@
 window.dom = {
-  find(selector) {
-    return document.querySelectorAll(selector);
+  find(selector, scope) {
+    // array = [];
+    // if (arguments.length === 1) {
+    //   if (selector.indexOf(">") !== -1) {
+    //     array = selector.split(">");
+    //     let div1 = document.querySelectorAll(array[0]);
+    //     let div2 = document.querySelectorAll(array[1]);
+    //     if (div1.class === div2.class) {
+    //       return div1;
+    //     }
+    //   }
+    //
+    //console.log((scope || document).querySelectorAll(selector));
+    return (scope || document).querySelectorAll(selector);
   },
   style(node, name, value) {
     if (arguments.length === 3) {
